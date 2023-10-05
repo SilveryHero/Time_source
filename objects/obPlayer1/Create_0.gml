@@ -4,6 +4,6 @@ vsp = 0
 hsp = 0
 spd = 3
 bullet = true
-
-
-
+ending = false
+alpha = 0
+texto = "Fim de jogo\nPressione Backspace para reiniciar"

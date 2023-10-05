@@ -1,5 +1,5 @@
-time_source_destroy(obEnemy.shot);
-room_restart();
+ending = true
+instance_destroy(other)
 
 
 

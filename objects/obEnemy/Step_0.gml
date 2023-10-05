@@ -8,6 +8,10 @@ vspd = function(){
 	enemyLife += 2;
 }
 
+if (enemyLife > 6) {
+	enemyLife = 0
+}
+
 if (x > 500 ) {
 	x-=5;
 	vspd();
@@ -24,15 +28,15 @@ if (moving) {
 y = clamp(y, 135, 255)
 
 if (y == 135 || y == 255) {
-	enemyvsp= enemyvsp*-1
+	enemyvsp = enemyvsp*-1
 }
 
 
 bullet = function() {
-	instance_create_depth(x-5, y, 1, obEnemyBullet);
+	instance_create_depth(x-7, y+25, 1, obEnemyBullet);
 	if instance_exists(obEnemy2){
 		if (obEnemy2.double) {
-			instance_create_depth(x-5, y+8, 1, obEnemyBullet);
+			instance_create_depth(x-7, y+33, 1, obEnemyBullet);
 		}
 	}
 }
@@ -47,6 +51,11 @@ if (instance_exists(obPlayer1)) {
 	}
 }
 //}
+if (obPlayer.ending) {
+	enemyvsp = 0;
+	enemyLife = 0;
+		time_source_stop(shot);
+}
 
 
 
